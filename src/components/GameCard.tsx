@@ -4,6 +4,7 @@ import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import PlatFormIconList from "./PlatFormIconList";
 import CriticScore from "./CriticScore";
 import getImageCropedUrl from "../services/image-url";
+import Emoji from "./Emoji";
 
 interface Props {
   game: Game;
@@ -16,6 +17,7 @@ const GameCard = ({ game }: Props) => {
       <CardBody>
         <Heading fontSize="2xl" key={game.id}>
           {game.name}
+          <Emoji rating={game.rating_top} />
         </Heading>
         <HStack justifyContent="space-between">
           <PlatFormIconList
